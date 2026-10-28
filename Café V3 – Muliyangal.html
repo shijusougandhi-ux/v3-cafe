@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Café V3 – Delicious Delicacy, Muliyangal</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#1d0a07;--bg2:#2b1008;--card:#3a170c;--gold:#e8a64a;--gold2:#ffd58a;--red:#c0392b;--ink:#fbeedd;--mute:#c9a98c;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 Outfit,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:calc(12px + env(safe-area-inset-top,0px)) 5vw 12px;background:rgba(29,10,7,.8);backdrop-filter:blur(10px)}
+nav b{font:800 22px Fraunces,serif;color:var(--gold)}
+nav div a{color:var(--ink);text-decoration:none;margin-left:22px;font-weight:500}
+nav div a:hover,a:focus-visible{color:var(--gold2)}
+@media(max-width:620px){nav div a:not(.call){display:none}}
+.hero{position:relative;min-height:100vh;display:grid;align-items:center;padding:110px 5vw 60px;background:radial-gradient(ellipse at 70% 40%,#6a2412 0,var(--bg) 65%)}
+#c3d{position:absolute;inset:0;width:100%;height:100%}
+.hero .t{position:relative;z-index:2;max-width:560px;pointer-events:none}
+.hero .t *{pointer-events:auto}
+.hero h1{font-size:clamp(46px,9vw,104px);font-weight:800;color:var(--gold2);text-shadow:0 6px 0 #7a2b10,0 14px 30px rgba(0,0,0,.6)}
+.hero p{margin:18px 0 26px;color:var(--mute);font-size:19px;text-shadow:0 2px 8px #000}
+.btn{display:inline-block;padding:14px 26px;border-radius:40px;background:var(--gold);color:#2a0d05;font-weight:600;text-decoration:none;box-shadow:0 8px 0 #9a5f17,0 14px 24px rgba(0,0,0,.5);transition:transform .15s,box-shadow .15s;margin:0 10px 14px 0}
+.btn:hover{transform:translateY(4px);box-shadow:0 4px 0 #9a5f17,0 8px 16px rgba(0,0,0,.5)}
+.btn.o{background:transparent;color:var(--gold2);border:2px solid var(--gold);box-shadow:none}
+.hint{position:absolute;bottom:18px;right:5vw;z-index:2;font-size:14px;color:var(--mute)}
+section{padding:90px 5vw}
+h2{font-size:clamp(34px,5vw,56px);color:var(--gold2);margin-bottom:10px}
+.sub{color:var(--mute);margin-bottom:40px;max-width:60ch}
+.sig{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px;perspective:1000px}
+.tilt{background:linear-gradient(145deg,var(--card),var(--bg2));border:1px solid #6b3418;border-radius:22px;padding:28px;transform-style:preserve-3d;transition:transform .12s;box-shadow:0 24px 40px rgba(0,0,0,.45)}
+.tilt h3{font-size:26px;transform:translateZ(40px)}
+.tilt .pr{font:800 34px Fraunces,serif;color:var(--gold);transform:translateZ(60px);margin:8px 0}
+.tilt p{color:var(--mute);transform:translateZ(25px)}
+.menu{background:var(--bg2)}
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.tabs button{font:500 16px Outfit;padding:10px 20px;border-radius:30px;border:1.5px solid var(--gold);background:none;color:var(--gold2);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--gold);color:#2a0d05}
+.tabs button:focus-visible{outline:3px solid #fff}
+.list{max-width:760px;display:grid;gap:4px}
+.row{display:flex;justify-content:space-between;gap:16px;padding:14px 4px;border-bottom:1px dashed #6b3418;font-size:19px}
+.row span:last-child{color:var(--gold);font-weight:600;white-space:nowrap}
+.note{margin-top:20px;color:var(--mute);font-size:15px}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.rev .tilt p{color:var(--ink);transform:none}
+.rev small{display:block;margin-top:12px;color:var(--gold)}
+.big{display:flex;flex-wrap:wrap;gap:30px;align-items:center;margin-bottom:34px}
+.big b{font:800 76px Fraunces,serif;color:var(--gold)}
+.info{background:var(--bg2);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px}
+.info li{list-style:none;margin:10px 0}
+.info a{color:var(--gold2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips span{padding:6px 14px;border-radius:20px;background:var(--card);border:1px solid #6b3418;font-size:15px}
+footer{padding:30px 5vw;text-align:center;color:var(--mute);font-size:14px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tilt,.btn{transition:none}}
+</style>
+</head>
+<body>
+<nav><b>Café V3</b><div><a href="#sig">Favourites</a><a href="#menu">Menu</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a><a class="call" href="tel:+917025993377">Call</a></div></nav>
+
+<header class="hero">
+<canvas id="c3d" aria-hidden="true"></canvas>
+<div class="t">
+<h1>Café V3<br>Delicious Delicacy</h1>
+<p>Biriyani, Al-Faham Mandhi, shawarma and Kerala meals, served fresh in Muliyangal near Perambra. Dine in, take away, or get it delivered.</p>
+<a class="btn" href="#menu">See the menu</a><a class="btn o" href="tel:+917025993377">Call 070259 93377</a>
+</div>
+<div class="hint">Drag or move your mouse to spin the plate</div>
+</header>
+
+<section id="sig">
+<h2>Most-ordered plates</h2>
+<p class="sub">Guests keep coming back for the biriyani and the mandhi.</p>
+<div class="sig">
+<div class="tilt"><h3>Chicken Biriyani</h3><div class="pr">₹150</div><p>Fragrant rice layered with spiced chicken. Also in beef and kizhi styles.</p></div>
+<div class="tilt"><h3>Al-Faham Mandhi</h3><div class="pr">₹170</div><p>Smoky grilled chicken on spiced rice. Half, full and family sizes.</p></div>
+<div class="tilt"><h3>Shawarma</h3><div class="pr">₹80</div><p>Wrapped warm and loaded. Try the Mexican at ₹100.</p></div>
+<div class="tilt"><h3>Butter Chicken</h3><div class="pr">₹180</div><p>Rich, creamy curry. Pair it with porotta or naan.</p></div>
+</div>
+</section>
+
+<section class="menu" id="menu">
+<h2>Menu</h2>
+<p class="sub">Prices in rupees, from our printed menu.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="list" id="list" role="tabpanel"></div>
+<p class="note">Menu from May 2022 – prices may have changed. Bread, mojito, smoothie, juice, ice cream and shake sections are also served; call to confirm current prices.</p>
+</section>
+
+<section id="reviews">
+<h2>What guests say</h2>
+<div class="big"><b>4.0</b><div>★★★★☆<br>from 139 Google reviews</div></div>
+<div class="rev">
+<div class="tilt"><p>Good food, good service, called the best family restaurant in Perambra.</p><small>Google review summary</small></div>
+<div class="tilt"><p>Hygienic, tasty and affordable – one of the safest places to eat in the area.</p><small>Local Guide</small></div>
+<div class="tilt"><p>The veg and non-veg meals were filling, and home-delivered biriyani arrived well.</p><small>Guest reviews</small></div>
+</div>
+</section>
+
+<section class="info" id="visit">
+<div>
+<h2>Visit us</h2>
+<ul>
+<li><b>Address:</b> Muliyangal, Perambra, Kerala 673525</li>
+<li><b>Hours:</b> Open daily, closes 11:30 pm</li>
+<li><b>Phone:</b> <a href="tel:+917025993377">070259 93377</a></li>
+<li><b>Typical spend:</b> ₹1–200 per person</li>
+</ul>
+<p style="margin-top:20px"><a class="btn" href="https://www.google.com/maps/place/V3+CAFE/@11.5349006,75.7724415,17z" target="_blank" rel="noopener">Get directions</a></p>
+</div>
+<div>
+<h2>Good to know</h2>
+<div class="chips"><span>Dine-in</span><span>Takeaway</span><span>Delivery</span><span>Outdoor seating</span><span>Free parking</span><span>Good for kids</span><span>Groups</span><span>Reservations</span><span>Catering</span><span>Card &amp; mobile pay</span></div>
+</div>
+</section>
+<footer>© Café V3, Muliyangal. Multi-cuisine restaurant.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+var M={"Rice":[["Chicken Biriyani",150],["Beef Biriyani",170],["Chicken Kizhi Biriyani",180],["Beef Kizhi Biriyani",200]],
+"Al-Faham Mandhi":[["Normal","170 / 340 / 660"],["BBQ","180 / 360 / 690"],["Peri Peri","190 / 370 / 700"],["Pepper Honey","190 / 370 / 700"]],
+"Shawarma & Tandoor":[["Shawarma Normal",80],["Shawarma Mexican",100],["Chicken Tikka",140],["Hariyali Murgh Tikka",140]],
+"Curry":[["Veg Khorma",70],["Butter Chicken",180],["V3 Special Chicken Curry",160],["V3 Special Beef Thengapal Curry",170],["Meen Mulagittathu",120],["Beef Coconut Fry",180]],
+"Soup, Salad & Combo":[["V3 Special Mutton Soup",200],["Hawaiian Chicken Salad",100],["Chinese Combo: Fried Rice with Dynamic Chicken",230]]};
+var tabs=document.getElementById('tabs'),list=document.getElementById('list');
+function show(k){[].forEach.call(tabs.children,function(b){b.setAttribute('aria-selected',b.textContent===k)});
+list.innerHTML=M[k].map(function(r){return '<div class="row"><span>'+r[0]+'</span><span>₹'+r[1]+'</span></div>'}).join('');
+if(k==='Al-Faham Mandhi')list.insertAdjacentHTML('beforeend','<div class="note">Prices for quarter / half / full portions as printed.</div>')}
+Object.keys(M).forEach(function(k){var b=document.createElement('button');b.textContent=k;b.setAttribute('role','tab');b.onclick=function(){show(k)};tabs.appendChild(b)});
+show('Rice');
+
+document.querySelectorAll('.tilt').forEach(function(el){
+el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+el.style.transform='rotateY('+x*16+'deg) rotateX('+-y*16+'deg)'});
+el.addEventListener('mouseleave',function(){el.style.transform=''})});
+
+(function(){
+var cv=document.getElementById('c3d');if(!window.THREE)return;
+var R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true}),S=new THREE.Scene(),C=new THREE.PerspectiveCamera(40,1,.1,100);
+var wide=function(){return innerWidth>800};
+S.add(new THREE.AmbientLight(0xffe2c0,.6));var L=new THREE.PointLight(0xffc27a,1.4,40);L.position.set(4,6,5);S.add(L);
+var G=new THREE.Group();S.add(G);
+function m(c,r){return new THREE.MeshStandardMaterial({color:c,roughness:r==null?.5:r})}
+var plate=new THREE.Mesh(new THREE.CylinderGeometry(2.6,2.1,.25,64),m(0xf3e6d3,.3));G.add(plate);
+var rim=new THREE.Mesh(new THREE.TorusGeometry(2.6,.08,16,80),m(0xe8a64a,.3));rim.rotation.x=Math.PI/2;rim.position.y=.12;G.add(rim);
+var rice=new THREE.Mesh(new THREE.SphereGeometry(1.7,48,24,0,6.3,0,1.5),m(0xf1d9a0,.9));rice.position.y=.1;rice.scale.y=.8;G.add(rice);
+for(var i=0;i<60;i++){var g=new THREE.Mesh(new THREE.CapsuleGeometry?new THREE.SphereGeometry(.06,6,6):new THREE.SphereGeometry(.06,6,6),m(i%3?0xc0392b:0x3b7a2a));var a=Math.random()*6.28,r=Math.random()*1.3,h=Math.sqrt(Math.max(0,1-r*r/2.9))*1.35;g.position.set(Math.cos(a)*r,.1+h*.8,Math.sin(a)*r);g.scale.set(1,1,2.2);G.add(g)}
+var leg=new THREE.Mesh(new THREE.CylinderGeometry(.22,.32,1.2,20),m(0xb5541c,.6));leg.position.set(-.5,1.5,.3);leg.rotation.z=.9;G.add(leg);
+var leg2=leg.clone();leg2.position.set(.8,1.4,-.4);leg2.rotation.z=-.8;leg2.rotation.y=1.2;G.add(leg2);
+var lime=new THREE.Mesh(new THREE.TorusGeometry(.45,.14,12,30),m(0x7fb23a,.6));lime.position.set(1.7,.5,1.2);lime.rotation.x=1.2;G.add(lime);
+var sp=[];for(var j=0;j<70;j++){var p=new THREE.Mesh(new THREE.SphereGeometry(.05+Math.random()*.05,6,6),m(j%2?0xe8a64a:0xc0392b));p.userData={a:Math.random()*6.28,r:3+Math.random()*3,y:Math.random()*5-1,s:.1+Math.random()*.3};S.add(p);sp.push(p)}
+var rx=.5,ry=0,tx=.5,ty=0,drag=false,lx=0;
+function size(){var w=cv.clientWidth,h=cv.clientHeight;R.setSize(w,h,false);R.setPixelRatio(Math.min(devicePixelRatio,2));C.aspect=w/h;C.updateProjectionMatrix();
+G.position.x=wide()?3.2:0;G.position.y=wide()?0:1.6;var s=wide()?1:.7;G.scale.set(s,s,s);C.position.set(0,3.4,wide()?11:13);C.lookAt(wide()?3.2:0,wide()?0:1,0)}
+addEventListener('resize',size);size();
+cv.parentNode.addEventListener('mousemove',function(e){if(!drag){ty=(e.clientX/innerWidth-.5)*2;tx=.5+(e.clientY/innerHeight-.5)*.4}});
+cv.parentNode.addEventListener('pointerdown',function(e){drag=true;lx=e.clientX});
+addEventListener('pointerup',function(){drag=false});
+addEventListener('pointermove',function(e){if(drag){ty+=(e.clientX-lx)*.01;lx=e.clientX}});
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches,t=0;
+(function loop(){t+=.016;if(!reduce){ry+=.004}
+G.rotation.y=ry+ty*(drag?1:.4);G.rotation.x+=(tx-G.rotation.x)*.05;G.position.y+=((wide()?Math.sin(t*1.5)*.15:1.6+Math.sin(t*1.5)*.1)-G.position.y)*.1;
+sp.forEach(function(p){var d=p.userData;d.a+=d.s*.01;p.position.set(Math.cos(d.a)*d.r+(wide()?3.2:0),d.y+Math.sin(t+d.a)*.3,Math.sin(d.a)*d.r)});
+R.render(S,C);requestAnimationFrame(loop)})();
+})();
+</script>
+</body>
+</html>
